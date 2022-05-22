@@ -1,20 +1,21 @@
 import "./App.css";
+import { Routes, Route } from "react-router";
+import Navbar from "./components/Navbar";
+import Gym from "./components/Gym";
+import ThreadMill from "./components/ThreadMill";
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route
+          path='/'
+          element={<h1 className='center mt-5'>VR GYM TRAINER</h1>}
+        />
+        <Route path='/gym' element={<Gym />} />
+        <Route path='/threadmill' element={<ThreadMill />} />
+      </Routes>
     </div>
   );
 }
